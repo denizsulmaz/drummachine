@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+html, body {
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: rgb(0, 0, 0);
+}
+#imza{
+    position: absolute;
+    bottom: 100px;
+    left: 730px;
+    z-index: 99;
+    width: 4%;
+}
+p {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  font-weight: 100;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.container {
+    margin-top: 150px;
+    margin-left: 450px;
+    margin-right: 450px;
+    border: 5px solid rgba(255, 255, 255, 0.589);
+    border-radius: 25px;
+  text-align: center;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.drumpad {
+  width: 480px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 50px auto;
+}
+
+.key {
+  position: relative;
+  opacity: 0.9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 7px;
+  background: rgba(130, 130, 130, 0.979);
+  color: rgba(255, 255, 255, 0.966);
+  font-size: 40px;
+  font-weight: 300;
+  -webkit-box-shadow: inset 0 0 5px 3px rgba(255, 255, 255, 0.2);
+          box-shadow: inset 0 0 5px 3px rgba(255, 255, 255, 0.2);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.key.yellow {
+  background-image: radial-gradient(#000000, #000000);
+  
+}
+
+.key.green {
+  /* background-image: radial-gradient(#00000063, #000000); */
+  background-color: black;
+  
+}
+
+.key.blue {
+  background-image: radial-gradient(#000000, #000000);
+  
+}
+
+.key.purple {
+  background-image: radial-gradient(#000000, #000000);
+  
+}
+.key.green.playing{
+  box-shadow: 0 0 10px blue !important;
+}
+.key.playing {
+  opacity: 1;
+  box-shadow: 0 0 10px rgb(150, 0, 0);
+}
+/*# sourceMappingURL=style.css.map */

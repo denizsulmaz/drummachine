@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/DSLOGO.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>DS Drums</title>
+</head>
+<body>
+    <div class="container">
+        <div class="drumpad">
+          <div class="row">
+            <div class="key blue" data-key="65">A</div>
+            <div class="key blue" data-key="83">S</div>
+            <div class="key yellow" data-key="68">D</div>
+            <div class="key yellow" data-key="70">F</div>
+          </div>
+          <div class="row">
+            <div class="key green" data-key="72">H</div>
+            <div class="key green" data-key="74">J</div>
+            <div class="key green" data-key="75">K</div>
+            <div class="key green" data-key="76">L</div>
+          </div>
+        </div>
+
+      </div>
+      <p>Just press those keys on your keyboard to get started.</p>
+      
+      <audio loop id="Big-Rack-Tom-Audio" data-key="65">
+        <source src="musics/A.wav" preload="auto" type="audio/wav" />
+      </audio>
+      <audio loop id="Crash-Audio" data-key="83">
+        <source src="musics/S.wav" preload="auto" type="audio/wav" />
+          </audio>
+      <audio loop id="Floor-Tom-Audio" data-key="68">
+        <source src="musics/D.wav" preload="auto" type="audio/wav" />
+      </audio>
+      <audio loop id="Hi-Hat-Closed-Audio" data-key="70">
+        <source src="musics/F.wav" preload="auto" type="audio/wav" />
+      </audio>
+      <audio loop id="Hi-Hat-Open-Audio" data-key="72">
+        <source src="musics/H.wav" preload="auto" type="audio/wav" />
+      </audio>
+      <audio loop id="Kick-Audio" data-key="74">
+        <source src="musics/J.wav" preload="auto" type="audio/wav" />
+      </audio>
+      <audio loop id="Small-Rack-Tom-Audio" data-key="75">
+        <source src="musics/K.wav" preload="auto" type="audio/wav" />
+      </audio>
+      <audio loop id="Snare-Audio" data-key="76">
+        <source src="musics/L.wav" preload="auto" type="audio/wav" />
+      </audio>
+
+
+
+      <img id="imza" src="imgs/DSLOGO.png" alt="">
+      
+      <script>
+          function _startPlayingMusic(e) {
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  if (!audio) return;
+  audio.play();
+  key.classList.add('playing');
+}
+
+function _stopPlaying(e) {
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  if (!audio) return;
+  audio.pause();
+  audio.currentTime = 0;
+  key.classList.remove('playing');
+}
+
+window.addEventListener('keydown', (e) => {
+  _startPlayingMusic(e);
+});
+
+window.addEventListener('keyup', (e) => {
+  _stopPlaying(e);
+});
+      </script>
+</body>
+</html>
